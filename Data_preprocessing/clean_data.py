@@ -1,6 +1,8 @@
+from Data_ingestion.load_data import load_csv
+
 import pandas as pd
 
-def drop_duplicate_ids(df: pd.DataFrame) -> pd.DataFrame:
+def _drop_duplicate_ids(df: pd.DataFrame) -> pd.DataFrame:
     """
     Drops duplicate property IDs, keeping only the latest entry based on sale date.
 
@@ -16,7 +18,7 @@ def drop_duplicate_ids(df: pd.DataFrame) -> pd.DataFrame:
     return df.reset_index(drop=True)
 
 
-def drop_irrelevant_columns(df):
+def _drop_irrelevant_columns(df):
     """
     Drops columns that are not relevant for the current project.
 
@@ -26,7 +28,31 @@ def drop_irrelevant_columns(df):
     Returns:
         pd.DataFrame: Dataframe with irrelevant columns removed.
     """
-    cols_to_drop = ["sqft_living15", "sqft_lot15"]
+    cols_to_drop = ["sqft_living15", "sqft_lot15","date"]
     existing_cols_to_drop = [col for col in cols_to_drop if col in df.columns]
     df = df.drop(columns=existing_cols_to_drop)
     return df
+
+
+
+def data_cleaning_pipeline(file_path: str):
+    """
+    Executes the data cleaning pipeline.
+    
+    Args:
+        file_path (str): Path to the CSV dataset.
+
+    Returns:
+        pd.DataFrame: The fully processed DataFrame.
+    """
+    # Load
+    df = load_csv(file_path)
+
+    # Clean
+    df = _drop_duplicate_ids(df)
+    df = _drop_irrelevant_columns(df)
+    
+    df.to_csv('Data/cleaned_properties.csv')
+
+    return df
+
