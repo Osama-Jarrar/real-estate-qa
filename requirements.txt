@@ -1,5 +1,12 @@
 pandas
+numpy
 matplotlib
 seaborn
 ipykernel
 pathlib
+langchain-core
+langchain-community
+langchain-text-splitters
+sentence-transformers
+faiss-cpu
+scikit-learn
