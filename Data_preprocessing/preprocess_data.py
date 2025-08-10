@@ -73,7 +73,7 @@ def feature_engineering_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     df = _add_renovation_features(df)
     df = _encode_features(df)
     
-    # OPTIONAL: slice dataset to first 551 rows, matching enriched dataset on GitHub.
+    # OPTIONAL: slice dataset to first 550 rows, matching enriched dataset on GitHub.
     # Comment out this line to process full dataset.
     df = df.iloc[:550]
 
