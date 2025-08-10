@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="search-header">
+            <h1>Find Your Dream Home</h1>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Type what you're looking for in a house"
+                    class="search-input"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div id="loadingSpinner" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Searching properties...</p>
+            </div>
+
+            <div id="resultsContainer" class="results-container hidden">
+                <div class="results-header">
+                    <h2 id="resultsCount">0 properties found</h2>
+                </div>
+                <div id="propertyGrid" class="property-grid">
+                    <!-- Property cards will be inserted here -->
+                </div>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                </svg>
+                <h3>Search for Properties</h3>
+                <p>Enter your wishes to start your search</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
