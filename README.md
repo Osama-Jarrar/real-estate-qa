@@ -143,7 +143,7 @@ This project showcases:
 - **Backend Development**: FastAPI, REST APIs, vector databases
 - **Frontend Development**: HTML/JS, search interfaces, user experience
 - **System Architecture**: Modular design, extensibility, production considerations
-- **DevOps**: Environment management, dependency handling, model serving
+- **DevOps**: Basic Development Setup: Virtual environments, dependency installation, local model loading
 
 ---
 
@@ -160,10 +160,8 @@ This project showcases:
 - [ ] Advanced filtering and sorting options
 
 ### Phase 3: Production Features
-- [ ] User authentication and saved searches
 - [ ] Property comparison tools
 - [ ] Market analysis and trends
-- [ ] Mobile-responsive design
 
 ---
 
